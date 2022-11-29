@@ -10,7 +10,7 @@
 #
 class PokeMove < ApplicationRecord
 
-  validates :move_id, uniqueness: { scope: :pokemon_id, message: "Pokemon cannot have the same move more than once" }
+  validates :move, uniqueness: { scope: :pokemon, message: "Pokemon cannot have the same move more than once" }
 
   belongs_to :pokemon
   belongs_to :move
