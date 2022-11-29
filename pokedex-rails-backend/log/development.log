@@ -8500,3 +8500,114 @@ FOREIGN KEY ("pokemon_id")
   [1m[36mCACHE Pokemon Load (0.0ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons" WHERE "pokemons"."id" = $1 LIMIT $2[0m  [["id", 125], ["LIMIT", 1]]
   [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "price", "happiness", "image_url", "pokemon_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Durable Wooden Gloves"], ["price", 78], ["happiness", 89], ["image_url", "/images/pokemon_egg.svg"], ["pokemon_id", 125], ["created_at", "2022-11-29 19:55:48.488249"], ["updated_at", "2022-11-29 19:55:48.488249"]]
   [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/pokemon" for 127.0.0.1 at 2022-11-29 14:57:38 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/pokemon"):
+  
+Started GET "/api/pokemon" for 127.0.0.1 at 2022-11-29 14:57:46 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/pokemon"):
+  
+Started GET "/api/pokemon" for 127.0.0.1 at 2022-11-29 14:58:47 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/pokemon"):
+  
+Started GET "/api/pokemon" for 127.0.0.1 at 2022-11-29 14:59:30 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActionController::RoutingError - uninitialized constant Api
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/api/pokemon" for 127.0.0.1 at 2022-11-29 15:02:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActionController::RoutingError - uninitialized constant Api::PokemonController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  Api::PokemonsController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/api/pokemon" for 127.0.0.1 at 2022-11-29 15:03:35 -0500
+
+ActionController::RoutingError - uninitialized constant Api::PokemonController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  Api::PokemonsController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/api/pokemon" for 127.0.0.1 at 2022-11-29 15:05:07 -0500
+Processing by Api::PokemonController#index as JSON
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 5842)
+
+
+
+NameError - undefined local variable or method `pokmeon' for #<Api::PokemonController:0x00000000005708>
+    render json: { pokmeon: }
+                   ^^^^^^^^
+Did you mean?  pokemon:
+  app/controllers/api/pokemon_controller.rb:4:in `index'
+
+Started GET "/api/pokemon" for 127.0.0.1 at 2022-11-29 15:05:26 -0500
+Processing by Api::PokemonController#index as JSON
+  [1m[36mPokemon Load (1.0ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/controllers/api/pokemon_controller.rb:4:in `index'
+Completed 200 OK in 39ms (Views: 29.0ms | ActiveRecord: 4.1ms | Allocations: 25544)
+
+
+Started GET "/api/pokemon" for 127.0.0.1 at 2022-11-29 15:05:32 -0500
+Processing by Api::PokemonController#index as JSON
+  [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/controllers/api/pokemon_controller.rb:4:in `index'
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.4ms | Allocations: 16167)
+
+
+Started GET "/api/pokemon" for 127.0.0.1 at 2022-11-29 15:06:06 -0500
+Processing by Api::PokemonController#index as JSON
+  [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/controllers/api/pokemon_controller.rb:4:in `index'
+Completed 200 OK in 27ms (Views: 20.1ms | ActiveRecord: 3.2ms | Allocations: 21385)
+
+
+Started GET "/api/pokemon" for 127.0.0.1 at 2022-11-29 15:11:32 -0500
+Processing by Api::PokemonController#index as JSON
+  Rendering api/pokemon/index.json.jbuilder
+  [1m[36mPokemon Load (0.8ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/api/pokemon/index.json.jbuilder:1
+  Rendered api/pokemon/index.json.jbuilder (Duration: 24.6ms | Allocations: 17650)
+Completed 200 OK in 38ms (Views: 32.5ms | ActiveRecord: 6.3ms | Allocations: 22250)
+
+
+Started GET "/api/pokemon" for 127.0.0.1 at 2022-11-29 15:11:45 -0500
+Processing by Api::PokemonController#index as JSON
+  Rendering api/pokemon/index.json.jbuilder
+  [1m[36mPokemon Load (0.4ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/api/pokemon/index.json.jbuilder:1
+  Rendered api/pokemon/index.json.jbuilder (Duration: 9.5ms | Allocations: 11690)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.4ms | Allocations: 11907)
+
+
+Started GET "/api/pokemon" for 127.0.0.1 at 2022-11-29 15:11:59 -0500
+Processing by Api::PokemonController#index as JSON
+  Rendering api/pokemon/index.json.jbuilder
+  [1m[36mPokemon Load (0.5ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/api/pokemon/index.json.jbuilder:1
+  Rendered api/pokemon/index.json.jbuilder (Duration: 13.2ms | Allocations: 11697)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.5ms | Allocations: 11886)
+
+
+Started GET "/api/pokemon" for 127.0.0.1 at 2022-11-29 15:12:32 -0500
+Processing by Api::PokemonController#index as JSON
+  Rendering api/pokemon/index.json.jbuilder
+  [1m[36mPokemon Load (0.5ms)[0m  [1m[34mSELECT "pokemons".* FROM "pokemons"[0m
+  ↳ app/views/api/pokemon/index.json.jbuilder:1
+  Rendered api/pokemon/index.json.jbuilder (Duration: 12.0ms | Allocations: 11690)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.5ms | Allocations: 11871)
+
+
